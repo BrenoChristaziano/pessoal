@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de tarefas simples</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/media.css" >
+</head>
+<body onload="horario()">
+    <header>
+        <h1>Gerenciador de tarefas</h1>
+    </header>
+    <main>
+        <h1 class="titulo">Crie a sua lista de tarefas diarias</h1>
+        <div>
+            <p class="adicionar">
+                <input class="texto" type="text" name="tarefa" id="tarefa"  placeholder="Digite a sua tarefa"> 
+                <span><i class="material-symbols-outlined  destaque" >Search</i></span>
+            </p>
+             <p>Qual o nivel de importancia da sua tarefa?</p>          
+                <label class="radio" >
+                    <input type="radio" name="opcao" id="normal"> Tarefa normal
+                </label>
+                <label class="radio">
+                    <input type="radio" name="opcao" id="importante"> Tarefa importante
+                </label> 
+            <input class="button" type="button" value="Adicionar" onclick="adicionar()">
+        </div>
+        <section id="caixaRolagem" readonly>
+            <strong></strong>         
+        </section>
+    </main>
+    <script src="javascript.js"></script>
+</body>
+</html>
