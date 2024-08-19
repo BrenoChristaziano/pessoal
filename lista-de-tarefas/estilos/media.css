@@ -43,6 +43,10 @@
         font-size: 1.3em;
         margin: 30px 20px;
     }
+     #botoes{
+        display: block;
+        margin: 15px 0px;
+    }
 }
 @media screen and (min-width: 992px) and (max-width: 1200px){
     header{
@@ -81,6 +85,10 @@
         font-size: 1.5em;
         margin: 30px 20px;
     }
+    #botoes{
+        display: block;
+        margin: 15px 0px;
+    }
     .button{
         width: 130px;
         height: 40px;
@@ -110,7 +118,7 @@
         margin-bottom: 20px;
     }
     .adicionar{
-        width: 590px;
+        width: 570px;
         margin: 20px 0px;
         margin-left: 30px;
     }
@@ -119,13 +127,17 @@
         border-radius: 35px;
         padding: 10px;
         font-size: 18px;
-        width: 520px;
+        width: 500px;
         cursor: pointer;
     }
     .radio{
         display: inline;
         font-size: 1.8em;
         margin: 30px 20px;
+    }
+     #botoes{
+        display: block;
+        margin: 15px 0px;
     }
     .button{
         width: 130px;

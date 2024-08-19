@@ -17,17 +17,21 @@ function adicionar() {
          window.alert('Escolha o nivel de importancia')
          return // Retorna para sair da função se nenhum nível de importância estiver selecionado
     }
-    if(escolha[1].checked){
-         let item = document.createElement('div')
-         item.textContent = tarefa.value
-         item.style.color = 'red'
-         lista.appendChild(item)
-         escolha[1].checked = false
-    }else if(escolha[0].checked){
-         let item = document.createElement('div')
-         item.textContent = tarefa.value
-         lista.appendChild(item)
-         escolha[0].checked = false
+    const criarcurso=(curso)=>{
+        if(escolha[1].checked){
+            let item = document.createElement('div')
+            item.setAttribute("class","importante")
+            item.innerHTML = curso
+            lista.appendChild(item)
+            escolha[1].checked = false
+       }else if(escolha[0].checked){
+            let item = document.createElement('div')
+            item.setAttribute('class', 'normal')
+            item.innerHTML = curso
+            lista.appendChild(item)
+            escolha[0].checked = false
+       }
+       return lista
     }
     tarefa.value = ''
     tarefa.focus()
