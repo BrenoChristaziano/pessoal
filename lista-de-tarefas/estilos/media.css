@@ -89,7 +89,7 @@
         display: block;
         margin: 15px 0px;
     }
-    .button{
+    button{
         width: 130px;
         height: 40px;
         font-size: 1em;
@@ -139,7 +139,7 @@
         display: block;
         margin: 15px 0px;
     }
-    .button{
+    button{
         width: 130px;
         height: 40px;
         font-size: 1em;
