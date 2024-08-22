@@ -47,6 +47,24 @@
         display: block;
         margin: 15px 0px;
     }
+    #caixaRolagem{
+        height: 100px;
+    }
+    .normal{
+        padding: 5px;
+        width: max-content;
+        height: 25px;
+        font-size: 1em;
+        margin: 5px;
+
+    }
+    .importante{     
+        padding: 5px;
+        width: max-content;
+        height: 25px;
+        font-size: 1.1em;
+        margin: 5px;
+    }
 }
 @media screen and (min-width: 992px) and (max-width: 1200px){
     header{
@@ -77,7 +95,7 @@
         border-radius: 35px;
         padding: 10px;
         font-size: 18px;
-        width: 465px;
+        width: 470px;
         cursor: pointer;
     }
     .radio{
@@ -96,6 +114,22 @@
     }
     #caixaRolagem{
         margin-left: 10px;
+        height: 150px;
+    }
+    .normal{
+        padding: 7px;
+        width: max-content;
+        height: 30px;
+        font-size: 1.1em;
+        margin: 5px;
+
+    }
+    .importante{     
+        padding: 7px;
+        width: max-content;
+        height: 30px;
+        font-size: 1.2em;
+        margin: 5px;
     }
 }
 @media screen and (min-width: 1200px) {
@@ -146,5 +180,21 @@
     }
     #caixaRolagem{
         margin-left: 10px;
+        height: 200px;
+    }
+    .normal{
+        padding: 9px;
+        width: max-content;
+        height: 30px;
+        font-size: 1.1em;
+        margin: 5px;
+
+    }
+    .importante{     
+        padding: 9px;
+        width: max-content;
+        height: 30px;
+        font-size: 1.2em;
+        margin: 5px;
     }
 }
