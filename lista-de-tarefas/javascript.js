@@ -15,6 +15,9 @@ const criarnonaTarefa =(tarefa)=>{
         novoelemento.setAttribute('class', 'importante')
     }
     novoelemento.innerHTML = tarefa
+    const radio = document.createElement('input')
+    radio.setAttribute('type', 'radio')
+    novoelemento.appendChild(radio)
     return novoelemento
 }
 btnadicionar.addEventListener("click",(evt)=>{
