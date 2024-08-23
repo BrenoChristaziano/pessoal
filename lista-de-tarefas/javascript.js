@@ -6,7 +6,7 @@ const btnconcluido = document.querySelector('#concluido')
 const btnpendente = document.querySelector('#pendente')
 const btnremover = document.querySelector('#remover')
 const caixa = document.querySelector('#caixaRolagem')
-
+ 
 const criarnonaTarefa =(tarefa)=>{
     const novoelemento = document.createElement('div') 
     if(Normal.checked){
@@ -14,7 +14,7 @@ const criarnonaTarefa =(tarefa)=>{
     }else{
         novoelemento.setAttribute('class', 'importante')
     }
-    novoelemento.innerHTML = tarefa 
+    novoelemento.innerHTML = tarefa
     return novoelemento
 }
 btnadicionar.addEventListener("click",(evt)=>{
@@ -37,5 +37,10 @@ btnadicionar.addEventListener("click",(evt)=>{
     } else if (Normal != Normal.checked && importante != importante.checked) {
         alert('Por favor, selecione a opção.')
     }
+    
+})
+
+btnconcluido.addEventListener("click", (evt)=>{
+
     
 })
