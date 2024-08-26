@@ -44,7 +44,8 @@ btnadicionar.addEventListener("click",(evt)=>{
 })
 
 btnconcluido.addEventListener("click", (evt)=>{
-    const escolha = document.setAttribute('class', 'concluido')
-    
+    const escolha = document.createElement('div')
+    escolha.setAttribute('class', 'concluido')
+   
     
 })
