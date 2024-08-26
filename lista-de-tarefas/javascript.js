@@ -6,7 +6,13 @@ const btnconcluido = document.querySelector('#concluido')
 const btnpendente = document.querySelector('#pendente')
 const btnremover = document.querySelector('#remover')
 const caixa = document.querySelector('#caixaRolagem')
- 
+
+const radio=(name)=>{
+    const radio = document.createElement('input')
+    radio.setAttribute('type', 'radio')
+    radio.setAttribute('name', name)
+    return radio
+}
 const criarnonaTarefa =(tarefa)=>{
     const novoelemento = document.createElement('div') 
     if(Normal.checked){
@@ -15,9 +21,7 @@ const criarnonaTarefa =(tarefa)=>{
         novoelemento.setAttribute('class', 'importante')
     }
     novoelemento.innerHTML = tarefa
-    const radio = document.createElement('input')
-    radio.setAttribute('type', 'radio')
-    novoelemento.appendChild(radio)
+    novoelemento.appendChild(radio())
     return novoelemento
 }
 btnadicionar.addEventListener("click",(evt)=>{
@@ -43,9 +47,20 @@ btnadicionar.addEventListener("click",(evt)=>{
     
 })
 
-btnconcluido.addEventListener("click", (evt)=>{
-    const escolha = document.createElement('div')
-    escolha.setAttribute('class', 'concluido')
-   
+btnconcluido.addEventListener("click", (evt) => {
+    const radios = document.querySelectorAll('input[type="radio"][name="task"]')
+    let radioSelecionado = null
     
-})
+    for (const radio of radios) {
+        if (radio.checked) {
+            radioSelecionado = radio
+            break
+        }
+    }
+    
+    if (radioSelecionado) {
+        radioSelecionado.classList.add('concluido')
+    } else {
+        window.alert("Selecione uma tarefa")
+    }
+});
