@@ -106,6 +106,12 @@ button{
     cursor: pointer;
     margin: 2px;
 }
+.normal > input{
+    margin-left: 5px;
+}
+.importante > input{
+    margin-left: 5px;
+}
 .importante{
     border: 1px solid rgb(138, 136, 136);
     background-color: rgb(228, 225, 225);
@@ -120,12 +126,10 @@ button{
 }
 .concluido{
     background-image: linear-gradient(90deg, green, white);
-    padding: 15px;
     border-radius: 25px;
 }
 .pendente{
     background-image: linear-gradient(90deg, red, white);
-    padding: 15px;
     border-radius: 25px;
 }
 
