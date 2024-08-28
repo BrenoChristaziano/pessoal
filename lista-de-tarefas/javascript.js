@@ -62,6 +62,7 @@ btnconcluido.addEventListener('click', () => {
 
     if (radioSelecionado) {
         radioSelecionado.classList.add('concluido')
+        radioSelecionado.querySelector('input[type="radio"]').checked = false
     } else {
         alert('Selecione uma tarefa')
     }
@@ -80,6 +81,7 @@ btnpendente.addEventListener("click",(evt)=>{
     }
     if (radioSelecionado){
         radioSelecionado.classList.add('pendente')
+        radioSelecionado.querySelector('input[type="radio"]').checked = false
     }else{
         alert('Selecione uma tarefa')
     }
