@@ -7,6 +7,19 @@ const btnpendente = document.querySelector('#pendente')
 const btnremover = document.querySelector('#remover')
 const caixa = document.querySelector('#caixaRolagem')
 
+// função de arlerta
+const showCustomAlert=(message)=>{
+    const div = document.createElement('div')
+    div.setAttribute('class', 'custom-alert')
+    div.textContent = message
+    document.body.appendChild(div)
+    div.style.display = "block"
+    setTimeout(()=>{
+        div.style.display = "None"
+        document.body.removeChild(div)
+    }, 3000)
+}
+
 // Função para criar um input radio
 const criarRadio = () => {
     const radio = document.createElement('input')
@@ -31,6 +44,19 @@ const criarNovaTarefa = (tarefaTexto) => {
     return novaDiv
 }
 
+// funcão encontrar radio selecionado
+const selecionado=()=>{
+    let radios = document.querySelectorAll('input[type="radio"][name="tarefa"]')
+    let radioSelecionado = null
+
+    for (let radio of radios){
+        if (radio.checked){
+            radioSelecionado = radio.parentElement
+            break;
+        }
+    }
+    return radioSelecionado
+}
 // Adicionar nova tarefa
 btnadicionar.addEventListener('click', () => {
     if (tarefa.value.trim()) {
@@ -41,65 +67,39 @@ btnadicionar.addEventListener('click', () => {
             Normal.checked = false
             importante.checked = false
         } else {
-            alert('Por favor, selecione a opção.')
+            showCustomAlert('Por favor, selecione a opção.' )
         }
     } else {
-        alert('Por favor, digite uma tarefa.')
+        showCustomAlert('Por favor, digite uma tarefa.')
     }
 })
 
 // Marcar tarefa como concluída
 btnconcluido.addEventListener('click', () => {
-    let radios = document.querySelectorAll('input[type="radio"][name="tarefa"]')
-    let radioSelecionado = null
-
-    for (let radio of radios) {
-        if (radio.checked) {
-            radioSelecionado = radio.parentElement // Pega o pai do radio (o div com a tarefa)
-            break;
-        }
-    }
-
-    if (radioSelecionado) {
-        radioSelecionado.classList.add('concluido')
-        radioSelecionado.querySelector('input[type="radio"]').checked = false
+    const escolhido = selecionado()
+    if (escolhido) {
+        escolhido.classList.add('concluido')
+        escolhido.querySelector('input[type="radio"]').checked = false
     } else {
-        alert('Selecione uma tarefa')
+        showCustomAlert('Selecione uma tarefa')
     }
-    radioSelecionado = false
 })
 // Marcar a tarefa como pendente
 btnpendente.addEventListener("click",(evt)=>{
-    let radios = document.querySelectorAll('input[type="radio"][name="tarefa"]')
-    let radioSelecionado = null
-
-    for (let radio of radios){
-        if (radio.checked){
-            radioSelecionado = radio.parentElement
-            break;
-        }
-    }
-    if (radioSelecionado){
-        radioSelecionado.classList.add('pendente')
-        radioSelecionado.querySelector('input[type="radio"]').checked = false
+    const escolhido = selecionado()
+    if (escolhido){
+        escolhido.classList.add('pendente')
+        escolhido.querySelector('input[type="radio"]').checked = false
     }else{
-        alert('Selecione uma tarefa')
+        showCustomAlert('Selecione uma tarefa')
     }
 })
 // Remove o elemento da caixa
 btnremover.addEventListener("click", (evt)=>{
-    let radios = document.querySelectorAll('input[type="radio"][name="tarefa"]')
-    let radioSelecionado = null
-
-    for (let radio of radios){
-        if (radio.checked){
-            radioSelecionado = radio.parentElement
-            break;
-        }
-    }
-    if (radioSelecionado){
-        radioSelecionado.remove(criarNovaTarefa())
+    const escolhido = selecionado()
+    if (escolhido){
+        escolhido.remove(criarNovaTarefa())
     }else{
-        alert('Selecione uma tarefa')
+        showCustomAlert('Selecione uma tarefa')
     }
 })

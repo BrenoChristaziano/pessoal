@@ -95,8 +95,12 @@
         border-radius: 35px;
         padding: 10px;
         font-size: 18px;
-        width: 470px;
+        width: 460px;
         cursor: pointer;
+    }
+    span{
+        vertical-align: middle;
+        padding: 5px;
     }
     .radio{
         display: inline;
@@ -159,10 +163,13 @@
     .texto{
         height: 35px;
         border-radius: 35px;
-        padding: 10px;
         font-size: 18px;
-        width: 500px;
+        width: 490px;
         cursor: pointer;
+    }
+    span{
+        vertical-align: middle;
+        padding: 5px;
     }
     .radio{
         display: inline;
